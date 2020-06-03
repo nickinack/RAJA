@@ -7,20 +7,20 @@
 
 #include "tests/test-forall-range-reduce-multiple.hpp"
 
-#if defined(RAJA_ENABLE_CUDA)
+#if defined(RAJA_ENABLE_TARGET_OPENMP)
 
 #include "../test-forall-execpol.hpp"
 #include "../test-reducepol.hpp"
 
-// Cartesian product of types for Cuda tests
-using CudaForallRangeReduceMultipleTypes =
+// Cartesian product of types for OpenMP target tests
+using OpenMPTargetForallRangeReduceMultipleTypes =
   Test< camp::cartesian_product<ReduceMultipleDataTypeList, 
-                                CudaResourceList, 
-                                CudaForallExecPols,
-                                CudaReducePols>>::Types;
+                                OpenMPTargetResourceList, 
+                                OpenMPTargetForallExecPols,
+                                OpenMPTargetReducePols>>::Types;
 
-INSTANTIATE_TYPED_TEST_SUITE_P(Cuda,
+INSTANTIATE_TYPED_TEST_SUITE_P(OpenMPTarget,
                                ForallRangeReduceMultipleTest,
-                               CudaForallRangeReduceMultipleTypes);
+                               OpenMPTargetForallRangeReduceMultipleTypes);
 
 #endif

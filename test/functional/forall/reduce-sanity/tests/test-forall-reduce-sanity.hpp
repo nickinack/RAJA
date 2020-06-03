@@ -39,4 +39,5 @@ REGISTER_TYPED_TEST_SUITE_P(ForallReduceSanityTest,
                             ReduceMinLocSanityForall,
                             ReduceMaxLocSanityForall);
 
+
 #endif  // __TEST_FORALL_REDUCE_SANITY_HPP__

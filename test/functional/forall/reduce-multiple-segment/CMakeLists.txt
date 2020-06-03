@@ -15,11 +15,11 @@ if(RAJA_ENABLE_OPENMP)
     SOURCES test-forall-range-reduce-multiple-openmp.cpp)
 endif()
 
-#if(RAJA_ENABLE_TARGET_OPENMP)
-#  raja_add_test(
-#    NAME test-forall-range-reduce-multiple-openmp-target
-#    SOURCES test-forall-range-reduce-multiple-openmp-target.cpp)
-#endif()
+if(RAJA_ENABLE_TARGET_OPENMP)
+  raja_add_test(
+    NAME test-forall-range-reduce-multiple-openmp-target
+    SOURCES test-forall-range-reduce-multiple-openmp-target.cpp)
+endif()
  
 if(RAJA_ENABLE_TBB)
   raja_add_test(
@@ -33,8 +33,8 @@ if(RAJA_ENABLE_CUDA)
     SOURCES test-forall-range-reduce-multiple-cuda.cpp)
 endif()
  
-#if(RAJA_ENABLE_HIP)
-#  raja_add_test(
-#    NAME test-forall-range-reduce-multiple-hip
-#    SOURCES test-forall-range-reduce-multiple-hip.cpp)
-#endif()
+if(RAJA_ENABLE_HIP)
+  raja_add_test(
+    NAME test-forall-range-reduce-multiple-hip
+    SOURCES test-forall-range-reduce-multiple-hip.cpp)
+endif()

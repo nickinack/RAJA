@@ -30,11 +30,13 @@ using ReduceMultipleDataTypeList = camp::list<int,
 #include "test-forall-range-reducemin-multiple.hpp"
 #include "test-forall-range-reducemax-multiple.hpp"
 #include "test-forall-range-reduceminloc-multiple.hpp"
+#include "test-forall-range-reducemaxloc-multiple.hpp"
 
 REGISTER_TYPED_TEST_SUITE_P(ForallRangeReduceMultipleTest,
                             ReduceSumMultipleRangeForall,
                             ReduceMinMultipleRangeForall,
                             ReduceMaxMultipleRangeForall,
-                            ReduceMinLocMultipleRangeForall);
+                            ReduceMinLocMultipleRangeForall,
+                            ReduceMaxLocMultipleRangeForall);
 
 #endif  // __TEST_FORALL_RANGE_REDUCE_MULTIPLE_HPP__

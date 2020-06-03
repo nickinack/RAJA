@@ -7,20 +7,20 @@
 
 #include "tests/test-forall-range-reduce-multiple.hpp"
 
-#if defined(RAJA_ENABLE_CUDA)
+#if defined(RAJA_ENABLE_HIP)
 
 #include "../test-forall-execpol.hpp"
 #include "../test-reducepol.hpp"
 
-// Cartesian product of types for Cuda tests
-using CudaForallRangeReduceMultipleTypes =
+// Cartesian product of types for HIP tests
+using HipForallRangeReduceMultipleTypes =
   Test< camp::cartesian_product<ReduceMultipleDataTypeList, 
-                                CudaResourceList, 
-                                CudaForallExecPols,
-                                CudaReducePols>>::Types;
+                                HipResourceList, 
+                                HipForallExecPols,
+                                HipReducePols>>::Types;
 
-INSTANTIATE_TYPED_TEST_SUITE_P(Cuda,
+INSTANTIATE_TYPED_TEST_SUITE_P(Hip,
                                ForallRangeReduceMultipleTest,
-                               CudaForallRangeReduceMultipleTypes);
+                               HipForallRangeReduceMultipleTypes);
 
 #endif
